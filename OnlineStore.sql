@@ -60,3 +60,8 @@ INSERT INTO order_items (order_id, product_id, quantity) VALUES
 (3, 3, 1),
 (4, 1, 3),
 (5, 2, 2);
+
+-- SQL QUERIES
+-- RETRIEVE ALL NAMES AND STOCK QUANTITIES FROM PRODUCTS
+
+SELECT product_name, stock_quantity FROM products;
