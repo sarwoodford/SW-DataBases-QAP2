@@ -28,3 +28,35 @@ PRIMARY KEY(order_id, product_id)
 );
 
 -- INSERT DATA INTO TABLES 
+
+INSERT INTO products (product_name, product_price, stock_quantity) VALUES
+('Kettle', 120.00, 9),
+('Teapot', 75.00, 13),
+('Tea Cup Set', 109.99, 12),
+('Tea Bag Variety Pack', 50.00, 16),
+('Thermal Mug', 25.50, 40);
+
+INSERT INTO customers (first_name, last_name, email) VALUES
+('Jim', 'Bob', 'jimb@example.com'),
+('John', 'Brown', 'johnb@example.com'),
+('Linda', 'Ryan', 'lindar@example.com'),
+('Carley', 'Grant', 'carleyg@example.com');
+
+INSERT INTO orders (customer_id, order_date) VALUES
+(1, '2024-04-20'),
+(2, '2024-05-19'),
+(3, '2024-06-18'),
+(4, '2024-07-17'),
+(4, '2024-08-16');
+
+INSERT INTO order_items (order_id, product_id, quantity) VALUES
+(1, 2, 1),
+(2, 4, 2),
+(3, 1, 1),
+(4, 5, 4),
+(5, 3, 5),
+(1, 4, 2),
+(2, 5, 6),
+(3, 3, 1),
+(4, 1, 3),
+(5, 2, 2);
