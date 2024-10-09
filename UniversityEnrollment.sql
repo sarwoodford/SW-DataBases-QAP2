@@ -82,3 +82,10 @@ WHERE id = 3;
 
 -- verified that email had been updated 
 -- SELECT * FROM students;
+
+-- DELETE A STUDENT FROM A COURSE
+DELETE FROM enrollments
+WHERE student_id = 3 AND course_id = 2;
+
+-- verified that student got deleted
+-- SELECT * FROM enrollments;
