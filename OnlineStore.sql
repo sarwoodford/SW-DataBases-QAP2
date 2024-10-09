@@ -65,3 +65,10 @@ INSERT INTO order_items (order_id, product_id, quantity) VALUES
 -- RETRIEVE ALL NAMES AND STOCK QUANTITIES FROM PRODUCTS
 
 SELECT product_name, stock_quantity FROM products;
+
+-- RETRIEVE PRODUCT NAMES AND QUANTITIES FOR ONE OF THE ORDERS PLACED
+
+SELECT products.product_name, order_items.quantity
+FROM order_items
+JOIN products ON order_items.product_id = products.id
+WHERE order_items.order_id = 1;
