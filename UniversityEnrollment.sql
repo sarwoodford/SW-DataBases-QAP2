@@ -28,3 +28,31 @@ course_id INT REFERENCES courses(id),
 enrollment_date DATE,
 PRIMARY KEY(student_id, course_id)
 );
+
+-- INSERT DATA INTO TABLES
+
+INSERT INTO students (first_name, last_name, email, enrollment_date) VALUES
+('John', 'Doe', 'jdoe@example.com', '2024-01-02'),
+('Jane', 'Smith', 'jsmith@example.com', '2024-01-03'),
+('Dave', 'Byrne', 'dbyrne@example.com', '2023-09-02'),
+('Michelle', 'Johnson', 'mjohnson@example.com', '2023-09-03'),
+('Jen', 'Fewer', 'jfewer@example.com', '2023-09-04');
+
+INSERT INTO professors (first_name, last_name, department) VALUES
+('Michael', 'Johnson', 'Physics'),
+('Emily', 'Brown', 'English'),
+('Tim', 'Smith', 'Math'),
+('Lisa', 'McDonald', 'Chemistry');
+
+INSERT INTO courses (course_name, course_description, professor_id) VALUES
+('Physics 101', 'Introduction to Physics', 1),
+('English 201', 'Second Level English', 2),
+('Math 109', 'Introduction to Algebra', 3);
+
+INSERT INTO enrollments (student_id, course_id, enrollment_date) VALUES
+(1, 1, '2024-01-01'),
+(2, 1, '2024-01-02'),
+(3, 2, '2024-01-03'),
+(5, 2, '2023-09-01'),
+(5, 1, '2023-09-03'),
+(4, 3, '2023-09-04');
