@@ -56,3 +56,11 @@ INSERT INTO enrollments (student_id, course_id, enrollment_date) VALUES
 (5, 2, '2023-09-01'),
 (5, 1, '2023-09-03'),
 (4, 3, '2023-09-04');
+
+-- CREATE FULL_NAME FOR STUDENT BY CONCANTONATION OF ALL STUDENTS IN PHYSICS 101
+
+SELECT CONCAT(students.first_name, ' ', students.last_name) AS full_name
+FROM students
+JOIN enrollments ON students.id = enrollments.student_id
+JOIN courses ON enrollments.course_id = courses.id
+WHERE courses.course_name = 'Physics 101';
