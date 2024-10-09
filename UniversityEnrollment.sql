@@ -64,3 +64,8 @@ FROM students
 JOIN enrollments ON students.id = enrollments.student_id
 JOIN courses ON enrollments.course_id = courses.id
 WHERE courses.course_name = 'Physics 101';
+
+-- CREATE PROFESSOR_NAME (FULL NAME) BY CONCANTONATION AND ASSIGN THEM TO THEIR RESPECTIVE COURSES
+SELECT courses.course_name, CONCAT(professors.first_name, ' ', professors.last_name) AS professor_name
+FROM courses
+JOIN professors ON courses.professor_id = professors.id;
