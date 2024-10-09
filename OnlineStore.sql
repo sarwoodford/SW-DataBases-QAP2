@@ -73,7 +73,26 @@ FROM order_items
 JOIN products ON order_items.product_id = products.id
 WHERE order_items.order_id = 1;
 
+-- RETRIEVE ALL ORDERS PLACED BY CUSTOMER ID = 2
+
 SELECT orders.id AS order_id, order_items.product_id, order_items.quantity
 FROM orders
 JOIN order_items ON orders.id = order_items.order_id
 WHERE orders.customer_id = 2;
+
+-- UPDATE DATA
+-- REDUCE STOCK FOR A SPECIFIC ORDER ID, RESPECTIVE TO HOW MANY WERE ORDERED OF THE ITEM
+
+-- view stock quantity before change 
+-- SELECT * FROM products; 
+
+UPDATE products
+SET stock_quantity = stock_quantity - order_items.quantity
+FROM order_items
+WHERE products.id = order_items.product_id AND order_items.order_id = 3;
+
+-- stocks were reduced for both orders where order id = 3, they appear as '(3, 1, 1)' and '(3, 3, 1)' where data
+-- was inserted into order_items table.
+
+-- verify that update worked
+-- SELECT * FROM products; 
