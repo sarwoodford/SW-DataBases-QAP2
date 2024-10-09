@@ -96,3 +96,16 @@ WHERE products.id = order_items.product_id AND order_items.order_id = 3;
 
 -- verify that update worked
 -- SELECT * FROM products; 
+
+-- REMOVE ONE OF THE ORDERS AND ALL ASSOCIATED ORDER_IEMS FROM THE SYSTEM
+-- removed order_items where order_id = 4
+
+-- view order_items before updating
+-- SELECT * FROM orders
+
+DELETE FROM order_items WHERE order_id = 4;
+
+DELETE FROM orders WHERE id = 4;
+
+-- verify that the update worked
+-- SELECT * FROM orders
